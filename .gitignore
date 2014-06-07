@@ -4,3 +4,6 @@
 # No need to track dependencies
 bower_components/
 node_modules/
+
+# No need to track our assets
+_assets/
