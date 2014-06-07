@@ -1,0 +1,24 @@
+{
+  "name": "prologue",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "fontawesome": "~4.1.0",
+    "normalize.css": "~3.0.1",
+    "retina.js": "~1.2.0"
+  },
+  "private": true,
+  "authors": [
+    "Amazing Rando <oest@amazingrando.com>"
+  ],
+  "description": "A starting point for Web projects by Amazing Rando Design http://amazingrando.com",
+  "license": "MIT",
+  "homepage": "http://amazingrando.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

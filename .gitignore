@@ -1,0 +1,6 @@
+# System files
+.DS_Store
+
+# No need to track dependencies
+bower_components/
+node_modules/
