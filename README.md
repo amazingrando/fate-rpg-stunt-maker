@@ -1,5 +1,5 @@
-# Prologue, a starterkit for Amazing Rando Design
+# Stuntmaker
 
-This repo is what I use to start my Web projects. It uses grunt and bower for dependencies.
+By Amazing Rando Design and based on the work of Fred Hicks.
 
 [Amazing Rando Design](http://amazingrando.com)
