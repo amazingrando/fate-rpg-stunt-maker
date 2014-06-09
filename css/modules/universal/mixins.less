@@ -138,9 +138,9 @@
 }
 
 .index-card-bkg(){
-  margin: 1em 1em 1em 0;
-  padding: 1em 2em;
-  padding: 16px 2em 1em;
+  // margin: 1em 1em 1em 0;
+  // padding: 1em 2em;
+  // padding: 16px 2em 1em;
   position: relative;
   vertical-align: top;
 
@@ -162,14 +162,14 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 
   &::before {
-      content: '';
-      position: absolute;
-      width: 4px;
-      top: 0;
-      left: 1.25em;
-      bottom: 0;
-      border: 1px solid;
-      border-color: transparent #efe4e4;
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 1.25em;
+    bottom: 0;
+    border: 1px solid;
+    border-color: transparent #efe4e4;
   }
 }
 
@@ -179,6 +179,20 @@
   padding: @unit @unit*2;
 }
 
+.button {
+  background: @blue;
+  color: #fff;
+  display: inline-block;
+  margin-top: .5em;
+  padding: .5em 1em;
+  border-radius: .5em;
+  box-shadow: inset 0 -4px 0px 0 rgba(0,0,0,.2);
+
+  &:hover {
+    background: @purple;
+    color: #fff;
+  }
+}
 
 
 

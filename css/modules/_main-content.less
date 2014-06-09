@@ -3,11 +3,70 @@ article.main-content {
 
 	// Style
 	.img-retina('@{img}/tweed.png', '@{img}/tweed_@2x.png', 200px, 200px);
+	min-height: 45vh;
 	text-align: center;
+	.clearfix;
+	.font-smoothing;
 
 	section.card {
 		.index-card-bkg;
 		color: @textColor;
 		font-family: @ff-sketch;
+		margin: @unit auto;
+		padding: @unit*2;
+		width: 100%;
+
+		@media screen and (min-width: @baby-bear) {
+			float: left;
+			&:nth-child(odd) {
+				margin-right: 2%;
+				width: 48%;
+			}
+			&:nth-child(even) {
+				width: 50%;
+			}
+		}
+
+		.inner {
+			display: table;
+		  text-align: center;
+		  position: relative;
+		  z-index: 100;
+
+		  p {
+		  	display: table-cell;
+			  vertical-align: middle;
+		  }
+		}
+
+		&.small .inner { // For loooooong cards.
+			font-size: .85em;
+		}
+
+		.aspect {
+			background: @yellow;
+			color: lighten(@textColor,10%);
+			display: inline-block;
+			font-family: @ff-sketch;
+			font-size: .95em;
+			padding: 0 .25em;
+		}
+	}
+
+	a.button {
+		.button;
+		font-size: 1.25em;
+		font-weight: bold;
+		text-decoration: none;
+		margin: @unit*1.5 auto @unit*3;
+		transition: all .2s;
+	}
+
+	.notice {
+		background: @textColor;
+		border-radius: .5em;
+		margin-bottom: @unit*2;
+		padding: @unit*2;
+		text-align: left;
 	}
 }

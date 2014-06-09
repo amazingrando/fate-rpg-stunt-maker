@@ -203,6 +203,19 @@ th {
   max-width: 960px;
   padding: 10px 20px;
 }
+.button {
+  background: #1b75bc;
+  color: #fff;
+  display: inline-block;
+  margin-top: .5em;
+  padding: .5em 1em;
+  border-radius: .5em;
+  box-shadow: inset 0 -4px 0px 0 rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  background: #9a4699;
+  color: #fff;
+}
 a,
 a:link {
   color: #99caf0;
@@ -225,38 +238,6 @@ body {
 }
 .flexbox body {
   background: #1b75bc;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.flexbox body header,
-.flexbox body article.main-content,
-.flexbox body footer {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 100%;
-  -ms-flex: 1 100%;
-  flex: 1 100%;
-}
-.flexbox body article.main-content {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.flexbox body article.main-content section.card {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 100%;
-  -ms-flex: 1 100%;
-  flex: 1 100%;
-  max-height: 200px;
 }
 header {
   background: #1b75bc;
@@ -279,7 +260,10 @@ header p {
 }
 article.main-content {
   background-image: url("../img/tweed.png");
+  min-height: 45vh;
   text-align: center;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   article.main-content {
@@ -287,10 +271,15 @@ article.main-content {
     background-size: 200px 200px;
   }
 }
+article.main-content:before,
+article.main-content:after {
+  content: " ";
+  display: table;
+}
+article.main-content:after {
+  clear: both;
+}
 article.main-content section.card {
-  margin: 1em 1em 1em 0;
-  padding: 1em 2em;
-  padding: 16px 2em 1em;
   position: relative;
   vertical-align: top;
   background: #fff;
@@ -303,6 +292,9 @@ article.main-content section.card {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   color: #333333;
   font-family: "sketchnote-text", Georgia, "Times New Roman", Times, serif;
+  margin: 10px auto;
+  padding: 20px;
+  width: 100%;
 }
 article.main-content section.card::before {
   content: '';
@@ -313,6 +305,65 @@ article.main-content section.card::before {
   bottom: 0;
   border: 1px solid;
   border-color: transparent #efe4e4;
+}
+@media screen and (min-width: 480px) {
+  article.main-content section.card {
+    float: left;
+  }
+  article.main-content section.card:nth-child(odd) {
+    margin-right: 2%;
+    width: 48%;
+  }
+  article.main-content section.card:nth-child(even) {
+    width: 50%;
+  }
+}
+article.main-content section.card .inner {
+  display: table;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+article.main-content section.card .inner p {
+  display: table-cell;
+  vertical-align: middle;
+}
+article.main-content section.card.small .inner {
+  font-size: .85em;
+}
+article.main-content section.card .aspect {
+  background: #fff8b9;
+  color: #4d4d4d;
+  display: inline-block;
+  font-family: "sketchnote-text", Georgia, "Times New Roman", Times, serif;
+  font-size: .95em;
+  padding: 0 .25em;
+}
+article.main-content a.button {
+  background: #1b75bc;
+  color: #fff;
+  display: inline-block;
+  margin-top: .5em;
+  padding: .5em 1em;
+  border-radius: .5em;
+  box-shadow: inset 0 -4px 0px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.25em;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 15px auto 30px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+article.main-content a.button:hover {
+  background: #9a4699;
+  color: #fff;
+}
+article.main-content .notice {
+  background: #333333;
+  border-radius: .5em;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: left;
 }
 footer {
   font-size: .8em;

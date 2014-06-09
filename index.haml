@@ -87,12 +87,12 @@
 
 	%article.main-content
 		.wrapper
-			%section.card
-				%h2 +2 to foo
-			%section.card
-				%h2 +2 to foo
-			%section.card
-				%h2 +2 to foo
+			.add-cards
+			%a.button{:href => "#"} Show me more stunts!
+			.notice
+				%strong These are meant to provide a starting-point.
+				Be careful about thoughtlessly grabbing them and dropping them into your game without at least a little table-vetting and checking for potential unintended side-effects!
+
 
 	%footer
 		.wrapper
@@ -118,7 +118,7 @@
 
 	-# Custom JS
 
-	%script{:src => "/js/main.js"}
+	%script{:src => "js/main.js"}
 
 	-# :javascript
 		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
