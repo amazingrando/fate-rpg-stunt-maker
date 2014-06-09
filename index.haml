@@ -9,105 +9,119 @@
 
 %html.no-js{:lang => "en"}
 
-    %head
+	%head
 
-        -# ==========================================================================
-        -# Head
-        -# ==========================================================================
+	-# ==========================================================================
+	-# Head
+	-# ==========================================================================
 
-        %meta{:charset => "utf-8"}
+	%meta{:charset => "utf-8"}
 
-        %title Title Goes Here.
-        %meta{:name => "description", :content => ""}
-        -# %meta{:name => "keywords", :content => ""}
-        -# %meta{:name => "author", :content => ""}
+	%title Fate Stuntmaker
+	%meta{:name => "description", :content => "The Fate Stuntmaker is a tool for inspiring the creation of stunts for the Fate RPG."}
 
 
-        -# Mobile
-        -# ==========================================================================
+	-# Mobile
+	-# ==========================================================================
 
-        %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
-        -# %meta{:name => "HandheldFriendly", :content => "True"}
-        -# %meta{:name => "MobileOptimized", :content => "320"}
+	%meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
 
-        -# iOS web app
+	-# Favicon & Touch
+	-# ==========================================================================
 
-        -# %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
-        -# %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black"}
-        -# %link{:rel => "apple-touch-startup-image", :href => "/img/touch/startup.png"}
+	%link{:href => "favicon.ico", :rel => "shortcut icon"}
+	-# %link{:rel => "apple-touch-icon-precomposed", :sizes => "144x144", :href => "/img/touch/apple-touch-icon-144x144-precomposed.png"}
 
 
-        -# Favicon & Touch
-        -# ==========================================================================
+	-# CSS
+	-# ==========================================================================
 
-        %link{:href => "/favicon.ico", :rel => "shortcut icon"}
-        -# %link{:rel => "apple-touch-icon-precomposed", :sizes => "144x144", :href => "/img/touch/apple-touch-icon-144x144-precomposed.png"}
+	%link{:rel => "stylesheet", :href => "css/main.css"}
+	-# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "/css/widescreen.css"}
+
+	-# IE Fixes
+	-# ==========================================================================
+
+	-#
+	-# Use HTML5 Shim polyfill if not using Modernizr
+	-# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
+	-# nicolasgallagher.com/mobile-first-css-sass-and-ie/
+	-#
+
+	-# /[if (lt IE 9) & (!IEMobile)]
+		-# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
+		%script{:src => "/js/libs/selectivizr.min.js"}
+		%script{:src => "http://experiments/fate-stuntmaker/node_modules/grunt-livereload/tasks/livereload.js"}
+		-# %link{:rel => "stylesheet", :href => "/css/oldie.css"}
+		-# %link{:rel => "stylesheet", :href => "/css/ie8.css"}
+
+	-# [if (lt IE 8) & (!IEMobile)]
+		%link{:rel => "stylesheet", :href => "/css/ie7.css"}
+
+	-# [if IE 6 & (!IEMobile)]
+		%link{:rel => "stylesheet", :href => "/css/ie6.css"}
+
+	-# JS
+	-# ==========================================================================
+
+	-# Typekit - change XXXXXXX to be your site's Typekit Kit ID
+
+	%script{:src => "http://use.typekit.com/hxl0ssr.js"}
+	:javascript
+		try{Typekit.load();}catch(e){}
+
+	-# Modernizr
+	%script{:src => "../bower_components/modernizr/modernizr.js"}
+
+	%body
+
+	-# ==========================================================================
+	-# Content
+	-# ==========================================================================
+
+	%header
+		%h1 Fate RPG Stuntmaker
+		%p
+			Randomly create stunts for the
+			%a{:href => "http://fate-srd.com"} Fate RPG
+
+	%article.main-content
+		.wrapper
+			%section.card
+				%h2 +2 to foo
+			%section.card
+				%h2 +2 to foo
+			%section.card
+				%h2 +2 to foo
+
+	%footer
+		.wrapper
+			%img{:src => "img/powered-by-fate.svg", :alt => "Powered by Fate"}/
+
+			%p This site was created by <a href="http://randyoest.com">Amazing Rando Design</a> and is based on a tool created by Fred Hicks.
+
+			%p This site is not affiliated with Evil Hat Productions, LLC.
+			%p This work is based on <a href="http://www.faterpg.com/">Fate Core System</a> and Fate Accelerated Edition, products of Evil Hat Productions, LLC, developed, authored, and edited by Leonard Balsera, Brian Engard, Jeremy Keller, Ryan Macklin, Mike Olson, Clark Valentine, Amanda Valentine, Fred Hicks, and Rob Donoghue, and licensed for our use under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported license</a>.
+			%p Fate&trade; is a trademark of Evil Hat Productions, LLC. The Powered by Fate logo is &copy; Evil Hat Productions, LLC and is used with permission.
+			%p The Fate Core font is © Evil Hat Productions, LLC and is used with permission. The Four Actions icons were designed by Jeremy Keller.
 
 
-        -# CSS
-        -# ==========================================================================
 
-        %link{:rel => "stylesheet", :href => "/_render/css/main.css"}
-        -# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "/css/widescreen.css"}
+	-# JS
+	-# ==========================================================================
 
-        -# IE Fixes
-        -# ==========================================================================
+	-# jQuery
 
-        -#
-        -# Use HTML5 Shim polyfill if not using Modernizr
-        -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
-        -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
-        -#
+	%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
+	:javascript
+		window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')
 
-        -# /[if (lt IE 9) & (!IEMobile)]
-            -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-            %script{:src => "/js/libs/selectivizr.min.js"}
-            -# %link{:rel => "stylesheet", :href => "/css/oldie.css"}
-            -# %link{:rel => "stylesheet", :href => "/css/ie8.css"}
+	-# Custom JS
 
-        -# [if (lt IE 8) & (!IEMobile)]
-            %link{:rel => "stylesheet", :href => "/css/ie7.css"}
+	%script{:src => "/js/main.js"}
 
-        -# [if IE 6 & (!IEMobile)]
-            %link{:rel => "stylesheet", :href => "/css/ie6.css"}
-
-        -# JS
-        -# ==========================================================================
-
-        -# Typekit - change XXXXXXX to be your site's Typekit Kit ID
-
-        -# %script{:src => "http://use.typekit.com/XXXXXXX.js"}
-        -# :javascript
-            try{Typekit.load();}catch(e){}
-
-        -# Modernizr
-
-        -# %script{:src => "/js/libs/modernizr.custom.js"}
-
-    %body
-
-        -# ==========================================================================
-        -# Content
-        -# ==========================================================================
-
-        %h1 I am HEADER!
-
-
-        -# JS
-        -# ==========================================================================
-
-        -# jQuery
-
-        -# %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
-        -# :javascript
-            window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')
-
-        -# Custom JS
-
-        -# %script{:src => "/js/app.js"}
-
-        -# :javascript
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+	-# :javascript
+		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));

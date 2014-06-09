@@ -16,6 +16,9 @@ module.exports = function(grunt) {
 		},
 
 		less: {
+			options: {
+	      livereload: false
+	    },
 			dev: {
 				files: {
 					"_render/css/main.css": "css/main.less",
@@ -63,10 +66,10 @@ module.exports = function(grunt) {
 
 		watch: {
 			scripts: {
-				files: ['*.haml','*.less','*.js'],
+				files: ['*.haml','css/*.less','css/*/*.less','css/*/*/*.less','js/*.js'],
 				tasks: ['default'],
 				options: {
-					spawn: false,
+					spawn: false
 				},
 			}
 		},
@@ -104,10 +107,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-text-replace');
+	grunt.loadNpmTasks('grunt-livereload');
 
 	// 	Run a subset of the tasks above as default. Some tasks don't need to be rerun all the time.
 	//	This also watches for changes.
-	grunt.registerTask('default', ['haml', 'less', 'autoprefixer', 'concat', 'watch']);
+	grunt.registerTask('default', ['haml', 'less', 'autoprefixer', 'concat', 'watch', ]);
 
 	// When we're done.
 	grunt.registerTask('export', ['haml', 'less', 'autoprefixer', 'concat', 'uglify', 'imagemin']);

@@ -2,6 +2,7 @@
   "name": "prologue",
   "version": "0.0.1",
   "dependencies": {
+    "modernizr": "~2.8.2"
     "bootstrap": "~3.1.1",
     "fontawesome": "~4.1.0",
     "normalize.css": "~3.0.1",

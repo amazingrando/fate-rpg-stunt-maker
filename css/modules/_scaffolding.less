@@ -1,0 +1,31 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.flexbox {
+	body {
+		background: @blue;
+		display: flex;
+		// flex-direction: column;
+		flex-wrap: wrap;
+
+		header,
+		article.main-content,
+		footer {
+			flex: 1 100%;
+		}
+
+		article.main-content {
+			display:flex;
+			align-items: center;
+
+			section.card {
+				flex: 1 100%;
+				max-height: 200px;
+			}
+		}
+
+	}
+}
