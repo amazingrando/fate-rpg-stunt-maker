@@ -105,10 +105,12 @@ $(function() {
 	}
 
 	generate_new_cards();
-	setTimeout( adjust_height, 100 );
+	setTimeout(adjust_height, 100);
 
-
-	$('a.button').on('click', generate_new_cards);
+	$('a.button').click(function(e) {
+	  e.preventDefault();
+	  generate_new_cards();
+	});
 
 	$(window).resize(adjust_height);
 

@@ -74,13 +74,13 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// copy: {
-		// 	dist: {
-		// 		files: {
-		// 			'_render/rendered.html'      : '_render/source.html'
-		// 		}
-		// 	}
-		// },
+		copy: {
+			dist: {
+				files: {
+					'_render/js/modernizr.js': 'bower_components/modernizr/modernizr.js'
+				}
+			}
+		},
 
 		// replace: {
 		// 	name_here: {
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
 
 	// 	Run a subset of the tasks above as default. Some tasks don't need to be rerun all the time.
 	//	This also watches for changes.
-	grunt.registerTask('default', ['haml', 'less', 'autoprefixer', 'concat', 'watch', ]);
+	grunt.registerTask('default', ['haml', 'less', 'autoprefixer', 'concat', 'copy', 'watch', ]);
 
 	// When we're done.
 	grunt.registerTask('export', ['haml', 'less', 'autoprefixer', 'concat', 'uglify', 'imagemin']);
