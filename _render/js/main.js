@@ -87,6 +87,7 @@ $(function() {
 				// when_low = when_low.pop();
 				w1 = random_array_item(when_low);
 				w2 = random_array_item(when_low,w1);
+				when = w1 + ", " + w2;
 			}
 
 			stunt = what +' '+when;
