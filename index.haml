@@ -20,52 +20,16 @@
 	%title Fate Stuntmaker
 	%meta{:name => "description", :content => "The Fate Stuntmaker is a tool for inspiring the creation of stunts for the Fate RPG."}
 
-
-	-# Mobile
-	-# ==========================================================================
-
 	%meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
 
 	-# Favicon & Touch
-	-# ==========================================================================
-
 	%link{:href => "favicon.ico", :rel => "shortcut icon"}
 	-# %link{:rel => "apple-touch-icon-precomposed", :sizes => "144x144", :href => "/img/touch/apple-touch-icon-144x144-precomposed.png"}
 
-
 	-# CSS
-	-# ==========================================================================
-
 	%link{:rel => "stylesheet", :href => "css/main.css"}
-	-# %link{:rel => "stylesheet", :media => "only screen and (min-width: 45em)", :href => "/css/widescreen.css"}
-
-	-# IE Fixes
-	-# ==========================================================================
-
-	-#
-	-# Use HTML5 Shim polyfill if not using Modernizr
-	-# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
-	-# nicolasgallagher.com/mobile-first-css-sass-and-ie/
-	-#
-
-	-# /[if (lt IE 9) & (!IEMobile)]
-		-# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-		%script{:src => "/js/libs/selectivizr.min.js"}
-		%script{:src => "http://experiments/fate-stuntmaker/node_modules/grunt-livereload/tasks/livereload.js"}
-		-# %link{:rel => "stylesheet", :href => "/css/oldie.css"}
-		-# %link{:rel => "stylesheet", :href => "/css/ie8.css"}
-
-	-# [if (lt IE 8) & (!IEMobile)]
-		%link{:rel => "stylesheet", :href => "/css/ie7.css"}
-
-	-# [if IE 6 & (!IEMobile)]
-		%link{:rel => "stylesheet", :href => "/css/ie6.css"}
 
 	-# JS
-	-# ==========================================================================
-
-	-# Typekit - change XXXXXXX to be your site's Typekit Kit ID
-
 	%script{:src => "http://use.typekit.com/hxl0ssr.js"}
 	:javascript
 		try{Typekit.load();}catch(e){}
@@ -87,9 +51,11 @@
 
 	%article.main-content
 		.wrapper
+			.notice.hide-js
+				This tool requires Javascript to function. Either turn on Javascript or open it in a browser that has it activated.
 			.add-cards
-			%a.button{:href => "#"} Show me more stunts!
-			.notice
+			%a.button.hide-no-js{:href => "#"} Show me more stunts!
+			.notice.hide-no-js
 				%strong These are meant to provide a starting-point.
 				Be careful about thoughtlessly grabbing them and dropping them into your game without at least a little table-vetting and checking for potential unintended side-effects!
 

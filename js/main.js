@@ -7,8 +7,7 @@ $(function() {
 			"when you pay a fate point",
 			"when doing a specific action (ex. Overcome, Create an Advantage, Attack, Defend)",
 			"replacing a boost, optionally, when you succeed with style for a specific action (Attack, Create an Advantage)",
-			"when you invoke the aspect related to the stunt (this costs an invoke or fate point, and replaces the +2 bonus)",
-			"TWO"
+			"when you invoke the aspect related to the stunt (this costs an invoke or fate point, and replaces the +2 bonus)"
 		],
 		when_high = [
 			"once per scene",
@@ -49,12 +48,10 @@ $(function() {
 
 		$('section.card').each(function(){
 			$(this).css('height','');
-			console.log($(this).html());
 			thisHeight = $(this).innerHeight();
 			if (thisHeight > tallest) {
 				tallest = thisHeight;
 			}
-			console.log('ht '+tallest);
 		});
 
 		$('section.card').each(function(){
@@ -68,7 +65,7 @@ $(function() {
 
 		var i = 0;
 		while (i < 4) {
-			var when, what, stunt, loop_template;
+			var when, what, w1, w2, stunt, loop_template;
 			var high_or_low = Math.round(Math.random()) ? '0' : '1';
 
 			if(high_or_low === '0') {
@@ -81,8 +78,16 @@ $(function() {
 
 			when = random_array_item(when);
 			what = random_array_item(what);
+
+			if (when === 'TWO') {
+				// when_low = when_low.pop();
+				w1 = random_array_item(when_low);
+				w2 = random_array_item(when_low);
+				when = w1 + ', ' + w2;
+				console.log("two fired" + i + " "+ when);
+			}
+
 			stunt = what +' '+when;
-			console.log('stunt '+stunt);
 
 			if (stunt.length > 150) {
 				additional_classes = 'small';
@@ -100,7 +105,8 @@ $(function() {
 	}
 
 	generate_new_cards();
-	adjust_height();
+	setTimeout( adjust_height, 100 );
+
 
 	$('a.button').on('click', generate_new_cards);
 
