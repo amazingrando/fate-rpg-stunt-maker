@@ -39,7 +39,11 @@ $(function() {
 	var additional_classes;
 	var template = '<section class="card {{additional_classes}}"><div class="inner"><p>{{content}}</p></div></section>';
 
-	function random_array_item(v){
+	function random_array_item(v, prev){
+		if (typeof prev != "undefined") {
+			var prev_item_index = v.indexOf(prev);
+			v.splice(prev_item_index, 1);
+		}
 		return v[Math.floor(Math.random()*v.length)];
 	}
 
@@ -82,9 +86,7 @@ $(function() {
 			if (when === 'TWO') {
 				// when_low = when_low.pop();
 				w1 = random_array_item(when_low);
-				w2 = random_array_item(when_low);
-				when = w1 + ', ' + w2;
-				console.log("two fired" + i + " "+ when);
+				w2 = random_array_item(when_low,w1);
 			}
 
 			stunt = what +' '+when;
