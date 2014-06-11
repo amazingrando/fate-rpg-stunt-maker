@@ -1,5 +1,5 @@
 # Stuntmaker
 
-By Amazing Rando Design and based on the work of Fred Hicks.
+By [Amazing Rando Design](http://amazingrando.com) (Randy Oest) and based on the work of Fred Hicks and Dave Joria.
 
-[Amazing Rando Design](http://amazingrando.com)
+See it in action at [Fate Stuntmaker](http://fate-srd.com/stunt-maker/).
