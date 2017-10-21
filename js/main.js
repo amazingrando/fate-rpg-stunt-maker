@@ -86,7 +86,9 @@ $(function() {
 			if (when === 'TWO') {
 				// when_low = when_low.pop();
 				w1 = random_array_item(when_low);
-				w2 = random_array_item(when_low,w1);
+				do {
+					w2 = random_array_item(when_low);
+				} while (w1 === w2);
 				when = w1 + ", " + w2;
 			}
 
