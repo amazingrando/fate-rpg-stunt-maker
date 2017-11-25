@@ -1,0 +1,4 @@
+name: fate-stuntmaker
+recipe: lamp
+config:
+  webroot: _render
