@@ -48,7 +48,7 @@ $(function() {
 	}
 
 	function adjust_height() {
-		var tallest = 0; console.log(tallest);
+		var tallest = 0;
 
 		$('section.card').each(function(){
 			$(this).css('height','');
@@ -121,8 +121,3 @@ $(function() {
 
 
 });
-
-
-
-
-
